@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Recorded feeds, reference tracks and event logs are large or run-specific.
+data/*.jsonl
+data/stills/
+data/*.mp4
+*.mp4

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CrossCount</title>
+<style>
+  :root {
+    --bg: #0b1017; --panel: #121a24; --line: #1f2a37; --text: #e6edf3; --muted: #8b98a8;
+    --pedestrian: #38bdf8; --cyclist: #4ade80; --two_wheeler: #fbbf24; --car: #c084fc;
+    --bus: #fb7185; --truck: #94a3b8; --rider: #475569; --accent: #22d3ee; --ok: #4ade80; --bad: #f87171;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 20px; letter-spacing: .2px; }
+  h1 small { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+  .pill { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .pill b { color: var(--text); font-variant-numeric: tabular-nums; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--bad); margin-right: 6px; vertical-align: 1px; }
+  .dot.on { background: var(--ok); }
+  main { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; padding: 16px 20px 24px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-width: 0; }
+  .card h2 { margin: 0 0 10px; font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .6px; }
+  #scene { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 6px; background: #05080c; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tile { border: 1px solid var(--line); border-radius: 8px; padding: 10px; border-top: 3px solid var(--c); }
+  .tile .n { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tile .k { font-size: 12px; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 5px 6px; border-bottom: 1px solid var(--line); text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-weight: 500; }
+  #chart { width: 100%; height: 190px; display: block; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+  #log { list-style: none; margin: 0; padding: 0; max-height: 228px; overflow: auto; font-size: 12px; }
+  #log li { display: grid; grid-template-columns: 54px 1fr auto; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  #log .t { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .tag { border-radius: 4px; padding: 0 6px; color: #0b1017; font-weight: 600; }
+  footer { padding: 0 20px 20px; color: var(--muted); font-size: 12px; }
+  .empty { color: var(--muted); font-size: 12px; padding: 8px 0; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 12px 16px; } .tiles { grid-template-columns: repeat(2, 1fr); } header { padding: 12px 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>CrossCount <small>PipeGen (DeepStream + TensorRT) tracks &rarr; per-class line-crossing counts</small></h1>
+  <div class="pills">
+    <span class="pill"><span id="conn" class="dot"></span>MQTT</span>
+    <span class="pill">Scene <b id="sceneName">&ndash;</b></span>
+    <span class="pill">Frame <b id="frame">&ndash;</b></span>
+    <span class="pill">Pipeline <b id="fps">&ndash;</b> fps</span>
+    <span class="pill">Counting <b id="ms">&ndash;</b> ms/frame</span>
+  </div>
+</header>
+<main>
+  <section class="card">
+    <h2>Live scene: boxes from PipeGen, counting lines from CrossCount</h2>
+    <canvas id="scene" width="1280" height="720" aria-label="Live view of tracked road users and counting lines"></canvas>
+  </section>
+  <section class="card">
+    <h2>Crossings this scene</h2>
+    <div class="tiles" id="tiles"></div>
+    <div style="overflow-x:auto"><table id="perLine"></table></div>
+  </section>
+  <section class="card">
+    <h2>Crossings per 10 s of video</h2>
+    <canvas id="chart" width="900" height="190" aria-label="Crossings over time by class"></canvas>
+    <div class="legend" id="legend"></div>
+  </section>
+  <section class="card">
+    <h2>Latest crossings</h2>
+    <ul id="log"></ul>
+  </section>
+</main>
+<footer>Only metadata reaches this page: boxes, classes and track ids. Faces and plates are pixelated inside the PipeGen pipeline before any frame is shown, saved or streamed. The scene background is a heavily blurred still.</footer>
+<script>
+const LABEL = { pedestrian: "Pedestrians", cyclist: "Cyclists", two_wheeler: "Two-wheelers", car: "Cars", bus: "Buses", truck: "Trucks" };
+const css = n => getComputedStyle(document.documentElement).getPropertyValue("--" + n).trim();
+const $ = id => document.getElementById(id);
+const sceneCv = $("scene"), sctx = sceneCv.getContext("2d");
+const chartCv = $("chart"), cctx = chartCv.getContext("2d");
+const stills = {};
+let state = null;
+
+function still(name) {
+  if (!name) return null;
+  if (!(name in stills)) { const im = new Image(); im.src = "/stills/" + name + ".jpg"; stills[name] = im; }
+  const im = stills[name];
+  return im.complete && im.naturalWidth ? im : null;
+}
+
+function drawScene(s) {
+  const W = sceneCv.width, H = sceneCv.height;
+  const [fw, fh] = s.frame_size || [1280, 720];
+  const sx = W / fw, sy = H / fh;
+  sctx.fillStyle = "#05080c"; sctx.fillRect(0, 0, W, H);
+  const im = still(s.scene);
+  if (im) { sctx.globalAlpha = 0.45; sctx.drawImage(im, 0, 0, W, H); sctx.globalAlpha = 1; }
+  for (const l of s.lines) {
+    const ax = l.a[0] * W, ay = l.a[1] * H, bx = l.b[0] * W, by = l.b[1] * H;
+    sctx.strokeStyle = css("accent"); sctx.lineWidth = 4; sctx.setLineDash([14, 8]);
+    sctx.beginPath(); sctx.moveTo(ax, ay); sctx.lineTo(bx, by); sctx.stroke(); sctx.setLineDash([]);
+    // Arrows to each side, labelled with the direction a crossing onto that side gets.
+    const mx = (ax + bx) / 2, my = (ay + by) / 2, len = Math.hypot(bx - ax, by - ay) || 1;
+    const nx = -(by - ay) / len, ny = (bx - ax) / len;   // points to the positive side (crossing.signed_distance > 0)
+    sctx.font = "600 18px system-ui"; sctx.fillStyle = css("accent");
+    sctx.fillText(l.name, ax + 8, ay - 8);
+    sctx.font = "15px system-ui";
+    sctx.fillText("→ " + l.pos, mx + nx * 46 - 30, my + ny * 46);
+    sctx.fillText("→ " + l.neg, mx - nx * 46 - 30, my - ny * 46);
+  }
+  sctx.lineWidth = 2; sctx.font = "12px system-ui";
+  for (const o of s.objects) {
+    const [x1, y1, x2, y2] = o.box;
+    const col = css(o.category) || css("rider");
+    sctx.strokeStyle = col; sctx.strokeRect(x1 * sx, y1 * sy, (x2 - x1) * sx, (y2 - y1) * sy);
+    if (o.category in LABEL) { sctx.fillStyle = col; sctx.fillText("#" + o.id, x1 * sx + 2, y1 * sy - 4); }
+  }
+  if (!s.scene) { sctx.fillStyle = css("muted"); sctx.font = "20px system-ui"; sctx.fillText("Waiting for PipeGen frames on MQTT…", 40, 60); }
+}
+
+function sceneTotals(s) {
+  const per = (s.totals || {})[s.scene] || {};
+  const byCat = {};
+  for (const c of s.categories) byCat[c] = 0;
+  for (const line of Object.values(per)) for (const [cat, dirs] of Object.entries(line)) for (const n of Object.values(dirs)) byCat[cat] += n;
+  return { per, byCat };
+}
+
+function drawTiles(s) {
+  const { per, byCat } = sceneTotals(s);
+  $("tiles").innerHTML = s.categories.map(c =>
+    `<div class="tile" style="--c:${css(c)}"><div class="n">${byCat[c]}</div><div class="k">${LABEL[c]}</div></div>`).join("");
+  const rows = s.lines.map(l => {
+    const line = per[l.name] || {};
+    const cells = s.categories.map(c => { const d = line[c] || {}; return `<td>${d[l.pos] || 0} / ${d[l.neg] || 0}</td>`; }).join("");
+    return `<tr><td>${l.name}<br><span style="color:var(--muted)">${l.pos} / ${l.neg}</span></td>${cells}</tr>`;
+  }).join("");
+  $("perLine").innerHTML = s.lines.length
+    ? `<tr><th>Line</th>${s.categories.map(c => `<th style="color:${css(c)}">${LABEL[c]}</th>`).join("")}</tr>${rows}` : "";
+}
+
+function drawChart(s) {
+  const W = chartCv.width, H = chartCv.height, pad = 24;
+  cctx.clearRect(0, 0, W, H);
+  const bins = s.series || [];
+  if (!bins.length) { cctx.fillStyle = css("muted"); cctx.font = "13px system-ui"; cctx.fillText("No crossings yet", 8, 20); return; }
+  const totals = bins.map(b => Object.values(b.counts).reduce((x, y) => x + y, 0));
+  const max = Math.max(1, ...totals);
+  const bw = (W - pad) / Math.max(bins.length, 12);
+  cctx.strokeStyle = css("line"); cctx.fillStyle = css("muted"); cctx.font = "11px system-ui";
+  for (const v of [0, Math.ceil(max / 2), max]) {
+    const y = H - pad - (v / max) * (H - 2 * pad);
+    cctx.beginPath(); cctx.moveTo(pad, y); cctx.lineTo(W, y); cctx.stroke(); cctx.fillText(v, 2, y + 4);
+  }
+  bins.forEach((b, i) => {
+    let y = H - pad;
+    for (const c of s.categories) {
+      const n = b.counts[c] || 0; if (!n) continue;
+      const h = (n / max) * (H - 2 * pad);
+      cctx.fillStyle = css(c); cctx.fillRect(pad + i * bw + 2, y - h, bw - 4, h - 1); y -= h;
+    }
+    if (i % 3 === 0) { cctx.fillStyle = css("muted"); cctx.fillText(Math.round(b.t0) + "s", pad + i * bw + 2, H - 6); }
+  });
+}
+
+function drawLog(s) {
+  const fmt = t => { const m = Math.floor(t / 60), x = (t % 60).toFixed(1).padStart(4, "0"); return m + ":" + x; };
+  $("log").innerHTML = s.recent.length ? s.recent.map(e =>
+    `<li><span class="t">${fmt(e.ts)}</span><span><span class="tag" style="background:${css(e.category)}">${LABEL[e.category]}</span> #${e.tracker_id} ${e.line}</span><span>${e.direction}</span></li>`).join("")
+    : `<li class="empty">No crossings yet</li>`;
+}
+
+function render(s) {
+  state = s;
+  $("conn").className = "dot" + (s.connected ? " on" : "");
+  $("sceneName").textContent = s.scene || "–";
+  $("frame").textContent = s.frame_index ?? "–";
+  $("fps").textContent = s.pipeline_fps || "–";
+  $("ms").textContent = s.count_ms_avg ?? "–";
+  drawScene(s); drawTiles(s); drawChart(s); drawLog(s);
+}
+
+$("legend").innerHTML = Object.keys(LABEL).map(c => `<span><i style="background:${css(c)}"></i>${LABEL[c]}</span>`).join("");
+// Poll rather than stream: four snapshots a second is plenty for a dashboard,
+// and plain requests survive any proxy or embedded browser in between.
+async function poll() {
+  try { render(await (await fetch("/api/state", { cache: "no-store" })).json()); }
+  catch { $("conn").className = "dot"; }
+  setTimeout(poll, 250);
+}
+poll();
+</script>
+</body>
+</html>

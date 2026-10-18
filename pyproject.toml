@@ -1,0 +1,17 @@
+[project]
+name = "crosscount"
+version = "0.1.0"
+description = "Per-class line-crossing counts for pedestrians, cyclists and vehicles from a PipeGen (DeepStream/TensorRT) pipeline"
+requires-python = ">=3.10"
+dependencies = [
+    "paho-mqtt==2.1.0",   # PipeGen publishes detections over MQTT
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+# Offline tooling only (clip checks, reference tracks for ground truth); not needed to run CrossCount.
+tools = ["opencv-python>=4.9", "ultralytics>=8.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

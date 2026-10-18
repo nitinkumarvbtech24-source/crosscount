@@ -1,0 +1,12 @@
+{
+ "title": "Measured on an RTX 3050 6 GB laptop GPU",
+ "rows": [
+  ["PipeGen FP16 engine (yolo11s, 640 px)", "6.62 ms per frame (~151 fps)"],
+  ["TensorRT build", "TensorRT 10.3, 16.8 s, 26.6 MB, 262 layers"],
+  ["INT8 (Edge Optimization)", "MinMax-calibrated on 30 real frames"],
+  ["CrossCount counting cost", "~0.25 ms per frame on the CPU"],
+  ["Ground truth", "267 hand-checked crossings on 5 counting lines"],
+  ["Counting on reference tracks", "recall 99.3%, precision 97.8% (any class)"]
+ ],
+ "notes": ["Counting clips in this cut run on offline reference tracks; the PipeGen run replaces them with one command (README)."]
+}

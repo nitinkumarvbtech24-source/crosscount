@@ -1,0 +1,33 @@
+{
+  "_doc": "Counting lines per scene, in 0..1 coordinates of the frame (x right, y down). A line is a segment from a to b; 'pos'/'neg' name the direction of a crossing that ends on that side. Placed on each scene's flow map (tools/scene_maps.py), across the lanes where tracks are dense and away from occluders.",
+  "frame_size": [1280, 720],
+  "scenes": {
+    "in_citycentre": {
+      "lines": [
+        {"name": "road", "a": [0.56, 0.48], "b": [0.62, 0.99], "pos": "to left", "neg": "to right"}
+      ]
+    },
+    "nl_amsterdam": {
+      "lines": [
+        {"name": "street", "a": [0.55, 0.60], "b": [0.55, 0.93], "pos": "to left", "neg": "to right"}
+      ]
+    },
+    "wroclaw_junction": {
+      "lines": [
+        {"name": "junction", "a": [0.45, 0.53], "b": [0.45, 0.99], "pos": "to left", "neg": "to right"}
+      ]
+    },
+    "tram_junction": {
+      "lines": [
+        {"name": "near_lanes", "a": [0.50, 0.73], "b": [0.50, 0.99], "pos": "to left", "neg": "to right"},
+        {"name": "crosswalk", "a": [0.50, 0.58], "b": [0.50, 0.73], "pos": "to left", "neg": "to right"}
+      ]
+    },
+    "wroclaw_zebra": {
+      "lines": [
+        {"name": "road", "a": [0.60, 0.535], "b": [0.60, 0.80], "pos": "to left", "neg": "to right"},
+        {"name": "sidewalk", "a": [0.60, 0.42], "b": [0.60, 0.535], "pos": "to left", "neg": "to right"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,1659 @@
+{
+ "_doc": "Hand-verified line crossings for the reel; built by tools/build_gt.py from eval/review.json.",
+ "scenes": {
+  "in_citycentre": {
+   "road": {
+    "events": [
+     {
+      "frame": 5,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 27
+     },
+     {
+      "frame": 15,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 16
+     },
+     {
+      "frame": 17,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 30
+     },
+     {
+      "frame": 23,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 169
+     },
+     {
+      "frame": 27,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 62
+     },
+     {
+      "frame": 64,
+      "category": "bus",
+      "direction": "to left",
+      "ref_track": 186
+     },
+     {
+      "frame": 73,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 12,
+      "_why": "white SUV labelled truck"
+     },
+     {
+      "frame": 113,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 747
+     },
+     {
+      "frame": 117,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 116
+     },
+     {
+      "frame": 137,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 766
+     },
+     {
+      "frame": 144,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 746
+     },
+     {
+      "frame": 168,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 1178
+     },
+     {
+      "frame": 188,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 1238
+     },
+     {
+      "frame": 209,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 26
+     },
+     {
+      "frame": 211,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 1168
+     },
+     {
+      "frame": 256,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 413
+     },
+     {
+      "frame": 260,
+      "category": "bus",
+      "direction": "to left",
+      "ref_track": 1359
+     },
+     {
+      "frame": 280,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 238
+     },
+     {
+      "frame": 322,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 1982
+     },
+     {
+      "frame": 324,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 1501
+     },
+     {
+      "frame": 326,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 44
+     },
+     {
+      "frame": 341,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 1778
+     },
+     {
+      "frame": 378,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 606
+     },
+     {
+      "frame": 384,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 2233
+     },
+     {
+      "frame": 400,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 2250
+     },
+     {
+      "frame": 404,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2322
+     },
+     {
+      "frame": 426,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2304
+     },
+     {
+      "frame": 434,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2311
+     },
+     {
+      "frame": 444,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 2410
+     },
+     {
+      "frame": 471,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 2350
+     },
+     {
+      "frame": 483,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2523
+     },
+     {
+      "frame": 491,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 2613
+     },
+     {
+      "frame": 494,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 2687,
+      "_why": "white Omni van behind the red car #2613 (first judged a duplicate from the crop; box data: separate boxes, IoU 0.16 over 72 frames)"
+     },
+     {
+      "frame": 495,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 1635
+     },
+     {
+      "frame": 534,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2481
+     },
+     {
+      "frame": 551,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 2947
+     },
+     {
+      "frame": 561,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 2223
+     },
+     {
+      "frame": 581,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 2461
+     },
+     {
+      "frame": 581,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3017
+     },
+     {
+      "frame": 602,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 2534
+     },
+     {
+      "frame": 633,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3107
+     },
+     {
+      "frame": 659,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 2586
+     },
+     {
+      "frame": 687,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 3334
+     },
+     {
+      "frame": 697,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 3384
+     },
+     {
+      "frame": 702,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3457
+     },
+     {
+      "frame": 704,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3373
+     },
+     {
+      "frame": 722,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 3422
+     },
+     {
+      "frame": 752,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 3598
+     },
+     {
+      "frame": 765,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 2669,
+      "_why": "yellow lorry labelled bus"
+     },
+     {
+      "frame": 765,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 3341
+     },
+     {
+      "frame": 806,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 3546
+     },
+     {
+      "frame": 834,
+      "category": "bus",
+      "direction": "to right",
+      "ref_track": 3140
+     },
+     {
+      "frame": 843,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3655
+     }
+    ]
+   }
+  },
+  "nl_amsterdam": {
+   "street": {
+    "events": [
+     {
+      "frame": 890,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 3858
+     },
+     {
+      "frame": 906,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 3913
+     },
+     {
+      "frame": 931,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 3954
+     },
+     {
+      "frame": 995,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 4195
+     },
+     {
+      "frame": 1031,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 4219
+     },
+     {
+      "frame": 1056,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 4243
+     },
+     {
+      "frame": 1107,
+      "category": "two_wheeler",
+      "direction": "to right",
+      "ref_track": 4256
+     },
+     {
+      "frame": 1142,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 4383
+     },
+     {
+      "frame": 1163,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 4509
+     },
+     {
+      "frame": 1184,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 4463
+     },
+     {
+      "frame": 1194,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 4646
+     },
+     {
+      "frame": 1210,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 4689
+     },
+     {
+      "frame": 1223,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 4517
+     },
+     {
+      "frame": 1247,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 4509
+     },
+     {
+      "frame": 1258,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 4830
+     },
+     {
+      "frame": 1298,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 4810
+     },
+     {
+      "frame": 1352,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 4954
+     },
+     {
+      "frame": 1422,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 5072
+     },
+     {
+      "frame": 1426,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 5069
+     },
+     {
+      "frame": 1516,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 5243
+     },
+     {
+      "frame": 1537,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 5183
+     },
+     {
+      "frame": 1571,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 5561
+     },
+     {
+      "frame": 1637,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 5690
+     },
+     {
+      "frame": 1679,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 5693
+     },
+     {
+      "frame": 1681,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 5615
+     },
+     {
+      "frame": 2030,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 6491
+     },
+     {
+      "frame": 2155,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 6051
+     },
+     {
+      "frame": 2311,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 6515,
+      "_why": "man on a bike with a crate labelled car"
+     },
+     {
+      "frame": 2371,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 7299
+     },
+     {
+      "frame": 2452,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 7469
+     },
+     {
+      "frame": 2585,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 7500
+     },
+     {
+      "frame": 2636,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 7464
+     },
+     {
+      "frame": 2663,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 8029
+     },
+     {
+      "frame": 2681,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 7690
+     },
+     {
+      "frame": 2706,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 7924,
+      "_why": "white panel van (one body)"
+     },
+     {
+      "frame": 2767,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8021
+     },
+     {
+      "frame": 2771,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 7979,
+      "_why": "scooter labelled car"
+     },
+     {
+      "frame": 2787,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 8417
+     },
+     {
+      "frame": 2789,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8162
+     },
+     {
+      "frame": 2794,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 8037
+     },
+     {
+      "frame": 2815,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 8247
+     },
+     {
+      "frame": 2826,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8145
+     },
+     {
+      "frame": 2853,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 8730
+     },
+     {
+      "frame": 2862,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8261
+     },
+     {
+      "frame": 2872,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8693
+     },
+     {
+      "frame": 2872,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 8919
+     },
+     {
+      "frame": 2892,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 8568
+     },
+     {
+      "frame": 2893,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 8627
+     },
+     {
+      "frame": 2964,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 9215
+     },
+     {
+      "frame": 2996,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 8994
+     },
+     {
+      "frame": 3047,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 9235
+     },
+     {
+      "frame": 3119,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 9548,
+      "_why": "black car labelled cyclist"
+     },
+     {
+      "frame": 3146,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 9541
+     },
+     {
+      "frame": 3196,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 9946
+     },
+     {
+      "frame": 3203,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 9882
+     },
+     {
+      "frame": 3204,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 9931
+     },
+     {
+      "frame": 3322,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 8994,
+      "_why": "scooter; id 8994 was a white SUV going right earlier"
+     }
+    ]
+   }
+  },
+  "wroclaw_junction": {
+   "junction": {
+    "events": [
+     {
+      "frame": 3432,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10519
+     },
+     {
+      "frame": 3441,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10517
+     },
+     {
+      "frame": 3486,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10570
+     },
+     {
+      "frame": 3501,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10587
+     },
+     {
+      "frame": 3513,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10625
+     },
+     {
+      "frame": 3543,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10672
+     },
+     {
+      "frame": 3558,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10702
+     },
+     {
+      "frame": 3566,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10744,
+      "_why": "small white van"
+     },
+     {
+      "frame": 3601,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10769
+     },
+     {
+      "frame": 3609,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10823
+     },
+     {
+      "frame": 3621,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10793
+     },
+     {
+      "frame": 3652,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10822
+     },
+     {
+      "frame": 3660,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10885
+     },
+     {
+      "frame": 3671,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10927
+     },
+     {
+      "frame": 3689,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10920
+     },
+     {
+      "frame": 3720,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 10989
+     },
+     {
+      "frame": 3746,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11019
+     },
+     {
+      "frame": 3753,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 11018
+     },
+     {
+      "frame": 3759,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 11008,
+      "_why": "a second white van beside #11018 (first judged a duplicate from the crop; box data: IoU 0.04)"
+     },
+     {
+      "frame": 3775,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11080
+     },
+     {
+      "frame": 3793,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11114
+     },
+     {
+      "frame": 3800,
+      "category": "cyclist",
+      "direction": "to left",
+      "ref_track": 11041
+     },
+     {
+      "frame": 3835,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11244
+     },
+     {
+      "frame": 3858,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 11324
+     },
+     {
+      "frame": 3913,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 11406
+     },
+     {
+      "frame": 3959,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 11462
+     },
+     {
+      "frame": 3983,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11508
+     },
+     {
+      "frame": 4013,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 11560
+     },
+     {
+      "frame": 4033,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11571
+     },
+     {
+      "frame": 4043,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11598
+     },
+     {
+      "frame": 4079,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 11696
+     },
+     {
+      "frame": 4084,
+      "category": "pedestrian",
+      "direction": "to left",
+      "ref_track": 11535
+     },
+     {
+      "frame": 4163,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 11988
+     },
+     {
+      "frame": 4248,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12133
+     },
+     {
+      "frame": 4277,
+      "category": "pedestrian",
+      "direction": "to left",
+      "ref_track": 11679
+     },
+     {
+      "frame": 4323,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12129
+     },
+     {
+      "frame": 4414,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12320
+     },
+     {
+      "frame": 4438,
+      "category": "pedestrian",
+      "direction": "to left",
+      "ref_track": 12164
+     },
+     {
+      "frame": 4464,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12384
+     },
+     {
+      "frame": 4479,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12633,
+      "_why": "blue panel van"
+     },
+     {
+      "frame": 4496,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12287
+     },
+     {
+      "frame": 4542,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12703
+     },
+     {
+      "frame": 4557,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12601
+     },
+     {
+      "frame": 4562,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 12534
+     },
+     {
+      "frame": 4595,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12829
+     },
+     {
+      "frame": 4636,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12952
+     },
+     {
+      "frame": 4691,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 12674
+     },
+     {
+      "frame": 4715,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13181
+     },
+     {
+      "frame": 4732,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13214
+     },
+     {
+      "frame": 4756,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13276
+     },
+     {
+      "frame": 4766,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13298
+     },
+     {
+      "frame": 4797,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13244
+     },
+     {
+      "frame": 4855,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13486
+     },
+     {
+      "frame": 4862,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 13429
+     },
+     {
+      "frame": 4887,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13612,
+      "_why": "small pink-liveried van behind the towed generator"
+     },
+     {
+      "frame": 4894,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13580
+     },
+     {
+      "frame": 4958,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13565
+     },
+     {
+      "frame": 4970,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 13418
+     },
+     {
+      "frame": 5000,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13755,
+      "_why": "white VW van"
+     },
+     {
+      "frame": 5013,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13810
+     },
+     {
+      "frame": 5042,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13772
+     },
+     {
+      "frame": 5049,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13818
+     },
+     {
+      "frame": 5069,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13858
+     },
+     {
+      "frame": 5077,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13842
+     },
+     {
+      "frame": 5086,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13876
+     },
+     {
+      "frame": 5112,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13870
+     },
+     {
+      "frame": 5116,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 13945
+     },
+     {
+      "frame": 5161,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14097
+     },
+     {
+      "frame": 5170,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14178
+     },
+     {
+      "frame": 5224,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14204
+     },
+     {
+      "frame": 5262,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14345
+     },
+     {
+      "frame": 5282,
+      "category": "truck",
+      "direction": "to left",
+      "ref_track": 14311
+     },
+     {
+      "frame": 5325,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14381
+     },
+     {
+      "frame": 5334,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14369,
+      "_why": "white Ford Transit van"
+     },
+     {
+      "frame": 5375,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14502
+     },
+     {
+      "frame": 5398,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14338
+     },
+     {
+      "frame": 5498,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14354
+     },
+     {
+      "frame": 5508,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14740
+     },
+     {
+      "frame": 5555,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14844
+     },
+     {
+      "frame": 5746,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 14995
+     },
+     {
+      "frame": 5790,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 14971
+     },
+     {
+      "frame": 5826,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 14931
+     },
+     {
+      "frame": 5831,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15072
+     },
+     {
+      "frame": 5897,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15307
+     },
+     {
+      "frame": 5915,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15101
+     },
+     {
+      "frame": 5949,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15193
+     },
+     {
+      "frame": 5960,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15300,
+      "_why": "white minibus"
+     },
+     {
+      "frame": 5989,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15293
+     },
+     {
+      "frame": 6005,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 15447,
+      "_why": "e-scooter rider on the bike lane; the detector only sees a person"
+     },
+     {
+      "frame": 6024,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15440
+     },
+     {
+      "frame": 6041,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15622
+     },
+     {
+      "frame": 6050,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15457
+     },
+     {
+      "frame": 6050,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15660
+     },
+     {
+      "frame": 6107,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15784
+     },
+     {
+      "frame": 6133,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15400
+     },
+     {
+      "frame": 6165,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15965
+     },
+     {
+      "frame": 6193,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 15678
+     },
+     {
+      "frame": 6231,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15960
+     },
+     {
+      "frame": 6290,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 15589
+     },
+     {
+      "frame": 6333,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 15992
+     },
+     {
+      "frame": 6373,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16121
+     },
+     {
+      "frame": 6412,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 16256
+     },
+     {
+      "frame": 6454,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 16331
+     },
+     {
+      "frame": 6465,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16408,
+      "_why": "white panel van"
+     },
+     {
+      "frame": 6501,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 16443
+     },
+     {
+      "frame": 6540,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16583
+     },
+     {
+      "frame": 6579,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 16567
+     },
+     {
+      "frame": 6604,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16769,
+      "_why": "small white van"
+     },
+     {
+      "frame": 6623,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 16611
+     },
+     {
+      "frame": 6636,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16870
+     },
+     {
+      "frame": 6650,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16815,
+      "_why": "white panel van"
+     },
+     {
+      "frame": 6693,
+      "category": "pedestrian",
+      "direction": "to left",
+      "ref_track": 16742
+     },
+     {
+      "frame": 6706,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16951
+     },
+     {
+      "frame": 6722,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17060
+     },
+     {
+      "frame": 6739,
+      "category": "pedestrian",
+      "direction": "to right",
+      "ref_track": 16732
+     },
+     {
+      "frame": 6751,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17100
+     },
+     {
+      "frame": 6756,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 16979
+     },
+     {
+      "frame": 6798,
+      "category": "truck",
+      "direction": "to right",
+      "ref_track": 16874
+     },
+     {
+      "frame": 6844,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17240
+     }
+    ]
+   }
+  },
+  "tram_junction": {
+   "near_lanes": {
+    "events": [
+     {
+      "frame": 7008,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 17494
+     },
+     {
+      "frame": 7030,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 17279
+     },
+     {
+      "frame": 7108,
+      "category": "car",
+      "direction": "to right",
+      "note": "black Renault Megane crossing while a pedestrian walks right in front of the lens; the reference lost it behind him (slit-scan streak at 7085-7105, frames 7085-7125 checked)"
+     },
+     {
+      "frame": 7161,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17876
+     },
+     {
+      "frame": 7171,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17899,
+      "_why": "DPD panel van"
+     },
+     {
+      "frame": 7211,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 17986
+     },
+     {
+      "frame": 7233,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18053
+     },
+     {
+      "frame": 7280,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18082
+     },
+     {
+      "frame": 7329,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18438
+     },
+     {
+      "frame": 7359,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18664
+     },
+     {
+      "frame": 7392,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18761
+     },
+     {
+      "frame": 7417,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18898
+     },
+     {
+      "frame": 7436,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 18987
+     },
+     {
+      "frame": 7449,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 19109
+     },
+     {
+      "frame": 7516,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 19412
+     },
+     {
+      "frame": 7556,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 19592
+     },
+     {
+      "frame": 7577,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 19783
+     },
+     {
+      "frame": 7615,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 19952
+     },
+     {
+      "frame": 7625,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 20047
+     },
+     {
+      "frame": 7663,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 20266
+     },
+     {
+      "frame": 7728,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 20707
+     }
+    ]
+   }
+  },
+  "wroclaw_zebra": {
+   "road": {
+    "events": [
+     {
+      "frame": 7881,
+      "category": "cyclist",
+      "direction": "to right",
+      "ref_track": 20951
+     },
+     {
+      "frame": 7895,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21036
+     },
+     {
+      "frame": 7905,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 20893,
+      "_why": "rider of a white sport motorbike counted as a pedestrian; the bike itself was not tracked, so this is that bike's crossing"
+     },
+     {
+      "frame": 7916,
+      "category": "two_wheeler",
+      "direction": "to left",
+      "ref_track": 21162
+     },
+     {
+      "frame": 7969,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21162
+     },
+     {
+      "frame": 7993,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21339,
+      "_why": "white Renault Master panel van"
+     },
+     {
+      "frame": 8037,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21470
+     },
+     {
+      "frame": 8064,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 21603
+     },
+     {
+      "frame": 8121,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21741
+     },
+     {
+      "frame": 8167,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21873
+     },
+     {
+      "frame": 8195,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 21915
+     },
+     {
+      "frame": 8202,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 21958
+     },
+     {
+      "frame": 8228,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 21971
+     },
+     {
+      "frame": 8300,
+      "category": "car",
+      "direction": "to left",
+      "ref_track": 22134
+     },
+     {
+      "frame": 8323,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 22174
+     },
+     {
+      "frame": 8384,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 22266
+     },
+     {
+      "frame": 8446,
+      "category": "car",
+      "direction": "to right",
+      "ref_track": 22314
+     }
+    ]
+   }
+  }
+ }
+}

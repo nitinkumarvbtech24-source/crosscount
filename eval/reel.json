@@ -1,0 +1,7 @@
+{"fps": 30, "width": 1280, "height": 720, "scenes": [
+  {"scene": "in_citycentre", "start_frame": 0, "end_frame": 845},
+  {"scene": "nl_amsterdam", "start_frame": 875, "end_frame": 3390},
+  {"scene": "wroclaw_junction", "start_frame": 3420, "end_frame": 6845},
+  {"scene": "tram_junction", "start_frame": 6875, "end_frame": 7783},
+  {"scene": "wroclaw_zebra", "start_frame": 7813, "end_frame": 8472}
+]}

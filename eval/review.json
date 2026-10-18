@@ -1,0 +1,65 @@
+{
+  "_doc": "Outcome of checking the reference crossings by eye. See tools/build_gt.py for the format. Class policy: car = cars, SUVs, one-body vans and minibuses, auto-rickshaws (no COCO class); truck = goods vehicles with a separate cargo body (pickups, box trucks, lorries, dump trucks, semis); two_wheeler = motorbikes and motor scooters; cyclist = bicycles and e-scooters (micromobility, no COCO class); trams are not counted.",
+  "reviewed": ["in_citycentre/road", "nl_amsterdam/street", "wroclaw_junction/junction", "tram_junction/near_lanes", "wroclaw_zebra/road"],
+  "_not_reviewed": {
+    "tram_junction/crosswalk": "a crowd crossing at once in front of a queue of cars; too dense to label crossing by crossing by eye, so not scored (a partial ground truth would mark real people PipeGen counts as false). Shown in the demo.",
+    "wroclaw_zebra/sidewalk": "a dense two-way stream of pedestrians on the far pavement passes the line in about 5 s; same reason."
+  },
+  "fix": {
+    "in_citycentre/road/12/to right": {"category": "car", "_why": "white SUV labelled truck"},
+    "in_citycentre/road/1872/to left": "fp",
+    "in_citycentre/road/2687/to left": {"category": "car", "_why": "white Omni van behind the red car #2613 (first judged a duplicate from the crop; box data: separate boxes, IoU 0.16 over 72 frames)"},
+    "in_citycentre/road/2669/to right": {"category": "truck", "_why": "yellow lorry labelled bus"},
+
+    "nl_amsterdam/street/3912/to left": "fp",
+    "nl_amsterdam/street/5261/to left": "fp",
+    "nl_amsterdam/street/6515/to left": {"category": "cyclist", "_why": "man on a bike with a crate labelled car"},
+    "nl_amsterdam/street/7979/to left": {"category": "two_wheeler", "_why": "scooter labelled car"},
+    "nl_amsterdam/street/9548/to left": {"category": "car", "_why": "black car labelled cyclist"},
+    "nl_amsterdam/street/8994/to left": {"category": "two_wheeler", "_why": "scooter; id 8994 was a white SUV going right earlier"},
+    "nl_amsterdam/street/7924/to right": {"category": "car", "_why": "white panel van (one body)"},
+
+    "wroclaw_junction/junction/11032/to right": "fp",
+    "wroclaw_junction/junction/11008/to left": {"category": "car", "_why": "a second white van beside #11018 (first judged a duplicate from the crop; box data: IoU 0.04)"},
+    "wroclaw_junction/junction/11193/to right": "fp",
+    "wroclaw_junction/junction/11932/to right": "fp",
+    "wroclaw_junction/junction/13459/to left": "fp",
+    "wroclaw_junction/junction/13534/to left": "fp",
+    "wroclaw_junction/junction/10744/to right": {"category": "car", "_why": "small white van"},
+    "wroclaw_junction/junction/12633/to left": {"category": "car", "_why": "blue panel van"},
+    "wroclaw_junction/junction/13612/to left": {"category": "car", "_why": "small pink-liveried van behind the towed generator"},
+    "wroclaw_junction/junction/13755/to left": {"category": "car", "_why": "white VW van"},
+    "wroclaw_junction/junction/14369/to left": {"category": "car", "_why": "white Ford Transit van"},
+    "wroclaw_junction/junction/15300/to left": {"category": "car", "_why": "white minibus"},
+    "wroclaw_junction/junction/15447/to right": {"category": "cyclist", "_why": "e-scooter rider on the bike lane; the detector only sees a person"},
+    "wroclaw_junction/junction/16408/to right": {"category": "car", "_why": "white panel van"},
+    "wroclaw_junction/junction/16769/to right": {"category": "car", "_why": "small white van"},
+    "wroclaw_junction/junction/16815/to right": {"category": "car", "_why": "white panel van"},
+
+    "tram_junction/near_lanes/17278/to right": "fp",
+    "tram_junction/near_lanes/17892/to right": "fp",
+    "tram_junction/near_lanes/19043/to left": "fp",
+    "tram_junction/near_lanes/17899/to right": {"category": "car", "_why": "DPD panel van"},
+
+    "wroclaw_zebra/road/20893/to left": {"category": "two_wheeler", "_why": "rider of a white sport motorbike counted as a pedestrian; the bike itself was not tracked, so this is that bike's crossing"},
+    "wroclaw_zebra/road/21339/to right": {"category": "car", "_why": "white Renault Master panel van"}
+  },
+  "_fp_notes": {
+    "in_citycentre/road/1872": "rider on a motorbike in slow traffic counted as pedestrian",
+    "nl_amsterdam/street/3912": "a head-sized box (about 30 x 30 px) on a car driver; the car is counted as #3954",
+    "nl_amsterdam/street/5261": "same black van as #5072, same frame",
+    "wroclaw_junction/junction/11032": "second box on the white van #11019 (IoU 0.75 over 13 frames)",
+    "wroclaw_junction/junction/11193": "second box on the black van #11244 (IoU 0.73)",
+    "wroclaw_junction/junction/11932": "second box on the yellow dump truck #11988 (IoU 0.56)",
+    "wroclaw_junction/junction/13459": "second box on the white box truck #13429 and its trailer",
+    "wroclaw_junction/junction/13534": "generator trailer towed by the box truck #13429",
+    "_method": "duplicates were first judged from the crops, then every one was checked against the box data (overlap while both tracks exist); three crop verdicts were wrong (two cars close together) and were reversed",
+    "tram_junction/near_lanes/17278": "a cyclist's rider counted as a pedestrian (both bikes counted as #17494, #17279)",
+    "tram_junction/near_lanes/17892": "second box on the DPD van #17899",
+    "tram_junction/near_lanes/19043": "the tram, detected as a bus; trams are not counted"
+  },
+  "added": [
+    {"scene": "tram_junction", "line": "near_lanes", "frame": 7108, "category": "car", "direction": "to right",
+     "note": "black Renault Megane crossing while a pedestrian walks right in front of the lens; the reference lost it behind him (slit-scan streak at 7085-7105, frames 7085-7125 checked)"}
+  ]
+}
